@@ -1,0 +1,187 @@
+.react-timeline {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.react-timeline:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: #969595;
+}
+
+.react-timeline__event {
+  display: flex;
+  align-items: center;
+}
+
+.react-timeline__event + .react-timeline__event {
+  margin-top: 50px;
+}
+
+.react-timeline__icons {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #969595;
+  background-color: #fff;
+}
+
+.react-timeline__icons:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #afaaaa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.react-timeline__lead {
+  color: #9a9696;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/** direction left */
+.react-timeline--left:before {
+  left: 20px;
+}
+
+.react-timeline--left .react-timeline_content {
+  margin-left: 60px;
+}
+
+/** direction right */
+.react-timeline--right .react-timeline__event {
+  flex-direction: row-reverse;
+  display: flex;
+}
+
+.react-timeline--right:before {
+  right: 20px;
+}
+
+.react-timeline--right .react-timeline_content {
+  text-align: right;
+  margin-right: 60px;
+}
+
+/** direction center */
+.react-timeline--center:before {
+  left: 50%;
+  margin-left: -1px;
+}
+
+.react-timeline--center .react-timeline_content {
+  width: 50%;
+}
+
+.react-timeline--center .react-timeline__event {
+  display: flex;
+  justify-content: center;
+}
+
+.react-timeline--center .react-timeline__event:nth-child(odd):before {
+  content: "";
+  width: 50%;
+  height: 1px;
+}
+
+.react-timeline--center
+  .react-timeline__event:nth-child(odd)
+  .react-timeline_content {
+  margin-left: 60px;
+  text-align: left;
+}
+
+.react-timeline--center .react-timeline__event:nth-child(even):after {
+  content: "";
+  width: 50%;
+  height: 1px;
+}
+
+.react-timeline--center
+  .react-timeline__event:nth-child(even)
+  .react-timeline_content {
+  margin-right: 60px;
+  text-align: right;
+}
+
+/** horizontal */
+.react-timeline--horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.react-timeline--horizontal .react-timeline__event + .react-timeline__event {
+  margin-top: 0;
+  margin-left: 15px;
+}
+
+.react-timeline--horizontal:before {
+  width: 100%;
+  height: 1px;
+  left: 0;
+  top: 50%;
+  margin-top: -1px;
+}
+
+.react-timeline--horizontal .react-timeline__event {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-timeline--horizontal .react-timeline__event:nth-child(odd):before {
+  content: "";
+  width: 1px;
+  height: 135px;
+}
+
+.react-timeline--horizontal .react-timeline__event:nth-child(even):before {
+  content: "";
+  width: 1px;
+  height: 135px;
+}
+
+.react-timeline--horizontal .react-timeline_content {
+  margin: 0;
+  width: 100%;
+}
+
+/** horizontal - left */
+.react-timeline--horizontal.react-timeline--left
+  .react-timeline__event
+  .react-timeline_content {
+  margin: 0;
+  text-align: left;
+}
+
+/** horizontal - center */
+.react-timeline--horizontal.react-timeline--center
+  .react-timeline__event
+  .react-timeline_content {
+  margin: 0;
+  text-align: left;
+}
+
+.react-timeline--horizontal.react-timeline--center
+  .react-timeline__event:nth-child(even):before {
+  display: none;
+}
+
+.react-timeline--horizontal.react-timeline--center
+  .react-timeline__event:nth-child(even):after {
+  content: "";
+  width: 1px;
+  height: 135px;
+}
