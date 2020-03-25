@@ -1,38 +1,52 @@
-import React from 'react'
+import React from 'react';
 /* css */
-import './styles.css'
+import './styles.css';
 
 interface ITimeline {
-    id: string;
-    title: string;
-    sub: string;
+  id: string;
+  title: string;
+  sub: string;
 }
 
-interface ITimelineProps {
-    timelines: ITimeline[];
-    direction?: 'left' | 'center' | 'right';
-    pivot?: 'vertical' | 'horizontal';
+interface ITimelineDefaultProps {
+  direction?: 'left' | 'center' | 'right';
+  pivot?: 'vertical' | 'horizontal';
 }
 
-const TimelineItem: React.FC<ITimeline> = (props) => (
-    <div className="react-timeline__event">
-        <div className="react-timeline__icons" />
-        <div className="react-timeline_content">
-        <div className="react-timeline__title">print title</div>
-        <div className="react-timeline__lead">print sub if available</div>
-        </div>
+interface ITimelineProps extends ITimelineDefaultProps {
+  timelines: ITimeline[];
+}
+
+const TimelineItem: React.FC<ITimeline> = props => (
+  <div className='react-timeline__event'>
+    <div className='react-timeline__icons' />
+    <div className='react-timeline_content'>
+      <div className='react-timeline__title'>print title</div>
+      <div className='react-timeline__lead'>print sub if available</div>
     </div>
+  </div>
 );
 
-const Timeline: React.FC<ITimelineProps> = ({ timelines, direction = 'left', pivot = 'vertical' }) => (
-  <div className={`react-timeline react-timeline--${pivot} react-timeline--${direction}`}>
+export const Timeline: React.FC<ITimelineProps> = ({ timelines, direction, pivot }) => (
+  <div
+    className={`react-timeline react-timeline--${pivot} react-timeline--${direction}`}
+  >
     print list timelines
   </div>
 );
 
+const defaultProps: ITimelineDefaultProps = {
+  direction: 'left',
+  pivot: 'vertical'
+};
+
+Timeline.defaultProps = defaultProps;
+
+export default Timeline;
+
 /**
  * Usage
- * 
+ *
 <Timeline
   pivot="vertical"
   direction="center"
