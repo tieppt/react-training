@@ -1,6 +1,6 @@
 import React from 'react';
-import { UserProfile } from './components/user-profile';
-import ProgressBar from './components/progress-bar/progress-bar';
+import { UserProfile, UserProfileComponent } from './components/user-profile';
+import ProgressBar, { ProgressBarComponent } from './components/progress-bar/progress-bar';
 
 function App() {
   function handleClick() {
@@ -16,6 +16,13 @@ function App() {
       />
       <button onClick={handleClick}>Click me</button>
       <ProgressBar/>
+      <br/>
+      <ProgressBarComponent width={80} />
+      <UserProfileComponent
+        username='Peter Parker'
+        hobbies={[]}
+        avatar='https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png'
+      />
     </div>
   );
 }
