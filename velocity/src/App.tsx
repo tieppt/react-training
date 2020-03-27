@@ -1,6 +1,7 @@
 import React from 'react';
 import { UserProfile, UserProfileComponent } from './components/user-profile';
 import ProgressBar, { ProgressBarComponent } from './components/progress-bar/progress-bar';
+import { RatingBar } from './components/rating-bar/rating-bar';
 
 function App() {
   function handleClick() {
@@ -23,6 +24,8 @@ function App() {
         hobbies={[]}
         avatar='https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png'
       />
+      <br/>
+      <RatingBar max={10} ratingValue={8} />
     </div>
   );
 }
