@@ -10,13 +10,13 @@ export const ProgressBar: React.FC<ProgressBarProps> = function (props) {
   return React.createElement(
     'div',
     {
-      class: 'progress-bar-container',
+      className: 'progress-bar-container',
       style: {
         backgroundColor: props.backgroundColor
       }
     },
     React.createElement('div', {
-      class: 'progress',
+      className: 'progress',
       style: {
         backgroundColor: props.progressColor,
         width: props.width + '%'
