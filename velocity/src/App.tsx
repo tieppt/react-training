@@ -1,5 +1,6 @@
 import React from 'react';
 import { UserProfile } from './components/user-profile';
+import ProgressBar from './components/progress-bar/progress-bar';
 
 function App() {
   function handleClick() {
@@ -14,6 +15,7 @@ function App() {
         avatar='https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png'
       />
       <button onClick={handleClick}>Click me</button>
+      <ProgressBar/>
     </div>
   );
 }
