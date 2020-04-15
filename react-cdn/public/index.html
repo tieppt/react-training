@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img-responsive {
+            max-width: 100%;
+        }
+        .container {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .progress {
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="handleClick()">Click me</button>
+    <div id="root">Content</div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script>
+        function handleClick() {
+            console.log('clicked');
+        }
+        function UserProfile(props) {
+            // vvvv
+            return React.createElement('div', {
+                className: props.containerClass
+            },
+                React.createElement('img', {
+                    className: 'img-responsive',
+                    src: props.avatar,
+                    alt: 'User Avatar'
+                }),
+                React.createElement('h3', {className: 'username'}, props.username)
+            );
+        }
+
+        UserProfile.defaultProps = {
+            containerClass: 'container'
+        };
+
+        const ProgressBar = function (props) {
+            var elements = React.createElement('div', {
+                className: 'progress-bar-container',
+                style: {
+                    backgroundColor: props.backgroundColor
+                }
+            }, React.createElement('div', {
+                className: 'progress',
+                style: {
+                    backgroundColor: props.progressColor,
+                    width: props.width + '%'
+                }
+            }));
+            return React.createElement('div', {},
+                React.createElement('div', {}, props.children),
+                
+                React.createElement('button', {
+                    onClick: handleClick
+                }, 'Click me'),
+                elements
+            );
+            
+        }
+        const defaultProps = {
+            backgroundColor: '#d9d9d9',
+            progressColor: '#4caf50',
+            width: 50,
+        }
+        ProgressBar.defaultProps = defaultProps;
+
+
+        var App = React.createElement('div', {},
+            React.createElement(UserProfile, {
+                containerClass: 'container-x',
+                username: 'Tiep Phan',
+                avatar: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Wikipedia_User-ICON_byNightsight.png'
+            }),
+            React.createElement(UserProfile, {
+                username: 'Peter Parker',
+                avatar: 'https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png'
+            }),
+            React.createElement(ProgressBar, {
+                width: 90,
+            }, 'fasfdas')
+        );
+
+        var root = document.querySelector('#root');
+        ReactDOM.render(App, root);
+    </script>
+</body>
+</html>
