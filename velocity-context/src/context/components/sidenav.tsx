@@ -1,18 +1,18 @@
 import React from "react";
-import { UserContext } from "../user-context";
+import { UCConsumer } from "../user-context";
 
 export function SideNav() {
   return (
-    <UserContext.Consumer>
+    <UCConsumer>
       {({ playlist }) => (
         <nav className="sidenav">
           <ul>
-            {playlist.map(item => (
+            {playlist.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </nav>
       )}
-    </UserContext.Consumer>
+    </UCConsumer>
   );
 }

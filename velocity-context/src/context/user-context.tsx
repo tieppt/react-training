@@ -1,10 +1,13 @@
 import React from "react";
 import { User } from "../models/user";
 
-export const UserContext = React.createContext<User>({
-  id: '',
-  avatarUrl: '',
+const UserContext = React.createContext<User>({
+  id: "",
+  avatarUrl: "",
   playlist: [],
-  username: '',
+  username: "",
   searchHistory: [],
 });
+
+const { Provider: UCProvider, Consumer: UCConsumer } = UserContext;
+export { UCProvider, UCConsumer, UserContext };
