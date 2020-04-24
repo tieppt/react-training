@@ -1,0 +1,60 @@
+{
+  "analysis": [
+    {
+      "id": 1,
+      "title": "Resolved tickets",
+      "value": 1233
+    },
+    {
+      "id": 2,
+      "title": "Average response",
+      "value": 0.012
+    },
+    {
+      "id": 3,
+      "title": "Meidan NPS",
+      "value": 4.32
+    }
+  ],
+  "transactions": [
+    {
+      "id": 2178,
+      "subject": "Refund request",
+      "requestedDate": 1588525200000,
+      "latestUpdate": 1588611600000,
+      "status": "active"
+    },
+    {
+      "id": 2179,
+      "subject": "Refund request",
+      "requestedDate": 1588525200000,
+      "latestUpdate": 1588611600000,
+      "status": "resolved"
+    },
+    {
+      "id": 2180,
+      "subject": "Refund request",
+      "requestedDate": 1588525200000,
+      "latestUpdate": 1588611600000,
+      "status": "paused"
+    },
+    {
+      "id": 2181,
+      "subject": "Refund request",
+      "requestedDate": 1588525200000,
+      "latestUpdate": 1588611600000,
+      "status": "Cancelled"
+    }
+  ],
+  "profile": {
+    "id": "some-unique-id",
+    "name": "Mr Vu",
+    "title": "Sr. Software Engineer",
+    "roles": [
+      "Developer",
+      "Technical Architect"
+    ],
+    "email": "someemail@gmail.com",
+    "phone": "01234234232"
+  }
+}
